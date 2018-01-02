@@ -1,0 +1,150 @@
+$table-width: 500px;
+$table-height: 500px;
+
+$caption-X: "Spieler X ist am Zug";
+$caption-O: "Spieler O ist am Zug";
+
+body {
+    margin: 50px;
+	width: 200px;
+	padding: 10px;
+	text-align: center;
+}
+
+.tic-tac-toe {
+	.table{
+		border-collapse: collapse;
+		border-style: hidden;
+		font-size: 30px;
+		width: $table-width;
+		height: $table-height;
+	}
+
+	.td{
+		border: 10px solid rgba(51,51,255,0.5);
+		background-color: rgba(102,102,255,0.8);
+		width: $table-width/9;
+		height: $table-height/9;
+		text-align: center;
+	}
+	
+	input[type="radio"] {
+		display: none;
+		
+		&:checked {
+			pointer-events: none;
+		}
+		
+		&:checked + label {
+			cursor: default;
+			//z-index: 10 !important;
+		}
+		
+		&.p1 + label:after {
+			content: "X";
+			opacity: 0;
+		}
+		
+		&.p2 + label:after {
+			content: "O";
+			opacity: 0;
+		}
+		
+		&.p1:checked + label:after,
+		&.p2:checked + label:after { opacity: 1; }
+		
+		@for $i from 1 through 2 {
+			&.turn-#{$i} + label {
+				z-index: $i;
+			}
+		}
+		
+		&.turn-1 + { display: block; }
+		
+		@for $i from 1 through 1 {
+			&.turn-#{$i}:checked ~ .turn-#{$i+1} + label { display: block; }
+		}
+	}
+	
+	label {
+		position: absolute;
+		border-radius: 14px;
+		cursor: pointer;
+		color: #fff;
+		height: $table-height/9;
+		width: $table-width/9;
+		
+		&:hover {
+			background-color: #3d4250;
+			&:after { opacity: .4; }
+		}
+		
+		
+	}
+	
+	//Checking for a tie:
+	input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~
+	input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~
+	input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ .end{
+	display: block;
+	
+		> h3:before {content:"It is a tie!";}
+	}
+	
+	.end {
+	background: rgba(255, 255, 255, .8);
+    bottom: 5px;
+    color: #3d4250;
+    display: none;
+    left: 5px;
+    padding-top: 55px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    text-align: center;
+    z-index: 11;
+   
+    @media(min-width: 450px) {
+      padding-top: 110px;
+    }
+    
+    h3 {
+      font-size: 30px;
+      font-weight: 300;
+      
+      @media(min-width: 450px) { font-size: 40px; }
+    }
+    
+    a {
+      background-color: #3d4250;
+      border-radius: 4px;
+      color: #fff;
+      padding: 14px 45px;
+      text-decoration: none;
+      
+      &:hover {
+        background-color: #262934;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.ol, .om, .or,
+.ml, .mm, .mr,
+.ul, .um, .ur {
+	position: relative;
+}
+
+.obenlinks:checked + .ol:after, .obenmitte:checked + .om:after, .obenrechts:checked + .or:after,
+.mittelinks:checked + .ml:after, .mittemitte:checked + .mm:after, .mitterechts:checked + .mr:after,
+.untenlinks:checked + .ul:after, .untenmitte:checked + .um:after, .untenrechts:checked + .ur:after
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:white;
+}
