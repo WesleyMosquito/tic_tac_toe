@@ -1,36 +1,19 @@
 $table-width: 500px;
 $table-height: 500px;
+$table-margin: 100px;
 
-$table-margin: 50px;
+$label-size: 150px;
+$label-space: $label-size + 10px;;
+$label-padding: 30px;
 
 $caption-X: "Spieler X ist am Zug";
 $caption-O: "Spieler O ist am Zug";
 
 body {
-    margin: $table-margin;
-	padding: 10px;
-	text-align: center;
+	padding: 0px;
 }
 
 .tic-tac-toe {
-	.table{
-		border-collapse: collapse;
-		border-style: hidden;
-		font-size: 30px;
-		//width: $table-width;
-		//height: $table-height;
-	}
-
-	.tr {
-		width: $table-width/3;
-	}
-	
-	.td {
-		border: 10px solid rgba(51,51,255,0.5);
-		//background-color: rgba(102,102,255,0.8);
-		width: ($table-width/3);
-		height: ($table-height/3);
-	}
 	
 	input[type="radio"] {
 		display: none;
@@ -46,23 +29,21 @@ body {
 		
 		&.p1 + label:after {
 			content: "X";
-			opacity: 0;
 		}
 		
 		&.p2 + label:after {
 			content: "O";
-			opacity: 0;
 		}
 		
 		&.p1:checked + label:after,
 		&.p2:checked + label:after { opacity: 1; }
 		
 		&.p1:checked + label:after { 
-			background-color: rgba(255,0,0,0.7);
+			background-color: rgba(200,20,20,1);
 			border-radius: 14px;
 		}
 		&.p2:checked + label:after { 
-			background-color: rgba(0,255,0,0.7);
+			background-color: rgba(200,200,20,1);
 			border-radius: 14px;
 		}
 		
@@ -80,73 +61,73 @@ body {
 		
 		//Positioning the labels
 		&.obenlinks + label {
-			left: $table-margin+10px;
-			top: $table-margin+46px;
+			left: $table-margin;
+			top: $table-margin;
 		}
 		
 		&.mittelinks + label {
-			left: $table-margin+10px;
-			top: $table-margin+226px;
+			left: $table-margin;
+			top: $table-margin + $label-space;
 		}
 		
 		&.untenlinks + label {
-			left: $table-margin+10px;
-			top: $table-margin+405px;
+			left: $table-margin;
+			top: $table-margin + $label-space*2;
 		}
 		
 		&.obenmitte + label {
-			left: $table-margin+190px;
-			top: $table-margin+46px;
+			left: $table-margin + $label-space;
+			top: $table-margin;
 		}
 		
 		&.mittemitte + label {
-			left: $table-margin+190px;
-			top: $table-margin+226px;
+			left: $table-margin + $label-space;
+			top: $table-margin + $label-space;
 		}
 		
 		&.untenmitte + label {
-			left: $table-margin+190px;
-			top: $table-margin+405px;
+			left: $table-margin + $label-space;
+			top: $table-margin + $label-space*2;
 		}
 		
 		&.obenrechts + label {
-			left: $table-margin+370px;
-			top: $table-margin+46px;
+			left: $table-margin + $label-space*2;
+			top: $table-margin;
 		}
 		
 		&.mitterechts + label {
-			left: $table-margin+370px;
-			top: $table-margin+226px;
+			left: $table-margin + $label-space*2;
+			top: $table-margin + $label-space;
 		}
 		
 		&.untenrechts + label {
-			left: $table-margin+370px;
-			top: $table-margin+405px;
+			left: $table-margin + $label-space*2;
+			top: $table-margin + $label-space*2;
 		}
 	}
 	
 	label {
-		background-color: rgba(102,102,255,0.8);
+		background-color: rgba(102,102,255,1);
 		position: absolute;
 		border-radius: 14px;
 		cursor: pointer;
 		color: #fff;
-		height: 165px;
-		width: 165px;
+		height: $label-size;
+		width: $label-size;
+		display: none;
 		&:hover {
-			background-color: #3d4250;
-			&:after { opacity: .4; }
+			background-color: rgb(61,66,80);
+			&:after { opacity: 0.4; }
 		}
 		
 		&:after {
 			left: 0%;
-			height: 125px;
+			height: $label-size - $label-padding;
 			width: 100%;
 			font-family: "Arial";
 			font-size: 70px;
-			padding-top: 40px;
+			padding-top: $label-padding;
 			text-align: center;
-			vertical-align: middle;
 			position: absolute;
 			opacity: 0;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
@@ -162,6 +143,71 @@ body {
 	display: block;
 	
 		> h3:before {content:"It is a tie!";}
+	}
+	
+	@for $i from 1 through 2{
+		//Possible wins for all rows
+		.p#{$i}.obenlinks:checked ~ .p#{$i}.obenmitte:checked ~ .p#{$i}.obenrechts:checked ~ .end,
+		.p#{$i}.obenlinks:checked ~ .p#{$i}.obenrechts:checked ~ .p#{$i}.obenmitte:checked ~ .end,
+		.p#{$i}.obenmitte:checked ~ .p#{$i}.obenlinks:checked ~ .p#{$i}.obenrechts:checked ~ .end,
+		.p#{$i}.obenmitte:checked ~ .p#{$i}.obenrechts:checked ~ .p#{$i}.obenlinks:checked ~ .end,
+		.p#{$i}.obenrechts:checked ~ .p#{$i}.obenmitte:checked ~ .p#{$i}.obenlinks:checked ~ .end,
+		.p#{$i}.obenrechts:checked ~ .p#{$i}.obenlinks:checked ~ .p#{$i}.obenmitte:checked ~ .end,
+		
+		.p#{$i}.mittelinks:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.mitterechts:checked ~ .end,
+		.p#{$i}.mittelinks:checked ~ .p#{$i}.mitterechts:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.mittelinks:checked ~ .p#{$i}.mitterechts:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.mitterechts:checked ~ .p#{$i}.mittelinks:checked ~ .end,
+		.p#{$i}.mitterechts:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.mittelinks:checked ~ .end,
+		.p#{$i}.mitterechts:checked ~ .p#{$i}.mittelinks:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		
+		.p#{$i}.untenlinks:checked ~ .p#{$i}.untenmitte:checked ~ .p#{$i}.untenrechts:checked ~ .end,
+		.p#{$i}.untenlinks:checked ~ .p#{$i}.untenrechts:checked ~ .p#{$i}.untenmitte:checked ~ .end,
+		.p#{$i}.untenmitte:checked ~ .p#{$i}.untenlinks:checked ~ .p#{$i}.untenrechts:checked ~ .end,
+		.p#{$i}.untenmitte:checked ~ .p#{$i}.untenrechts:checked ~ .p#{$i}.untenlinks:checked ~ .end,
+		.p#{$i}.untenrechts:checked ~ .p#{$i}.untenmitte:checked ~ .p#{$i}.untenlinks:checked ~ .end,
+		.p#{$i}.untenrechts:checked ~ .p#{$i}.untenlinks:checked ~ .p#{$i}.untenmitte:checked ~ .end,
+		
+		//Possible wins for all columns
+		.p#{$i}.obenlinks:checked ~ .p#{$i}.mittelinks:checked ~ .p#{$i}.untenlinks:checked ~ .end,
+		.p#{$i}.obenlinks:checked ~ .p#{$i}.untenlnks:checked ~ .p#{$i}.mittelinks:checked ~ .end,
+		.p#{$i}.mittelinks:checked ~ .p#{$i}.obenlinks:checked ~ .p#{$i}.untenlinks:checked ~ .end,
+		.p#{$i}.mittelinks:checked ~ .p#{$i}.untenlinks:checked ~ .p#{$i}.obenlinks:checked ~ .end,
+		.p#{$i}.untenlinks:checked ~ .p#{$i}.mittelinks:checked ~ .p#{$i}.obenlinks:checked ~ .end,
+		.p#{$i}.untenlinks:checked ~ .p#{$i}.obenlinks:checked ~ .p#{$i}.mittelinks:checked ~ .end,
+		
+		.p#{$i}.obenmitte:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.untenmitte:checked ~ .end,
+		.p#{$i}.obenmitte:checked ~ .p#{$i}.untenmitte:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.obenmitte:checked ~ .p#{$i}.untenmitte:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.untenmitte:checked ~ .p#{$i}.obenmitte:checked ~ .end,
+		.p#{$i}.untenmitte:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.obenmitte:checked ~ .end,
+		.p#{$i}.untenlmitte:checked ~ .p#{$i}.obenmitte:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		
+		.p#{$i}.obenrechts:checked ~ .p#{$i}.mitterechts:checked ~ .p#{$i}.untenrechts:checked ~ .end,
+		.p#{$i}.obenrechts:checked ~ .p#{$i}.untenrechts:checked ~ .p#{$i}.mitterechts:checked ~ .end,
+		.p#{$i}.mitterechts:checked ~ .p#{$i}.obenrechts:checked ~ .p#{$i}.untenrechts:checked ~ .end,
+		.p#{$i}.mitterechts:checked ~ .p#{$i}.untenrechts:checked ~ .p#{$i}.obenrechts:checked ~ .end,
+		.p#{$i}.untenrechts:checked ~ .p#{$i}.mitterechts:checked ~ .p#{$i}.obenrechts:checked ~ .end,
+		.p#{$i}.untenrechts:checked ~ .p#{$i}.obenrechts:checked ~ .p#{$i}.mitterechts:checked ~ .end,
+		
+		//Possible wins for all diagonals
+		.p#{$i}.obenlinks:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.untenrechts:checked ~ .end,
+		.p#{$i}.obenlinks:checked ~ .p#{$i}.untenrechts:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.obenlinks:checked ~ .p#{$i}.untenrechts:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.untenrechts:checked ~ .p#{$i}.obenlinks:checked ~ .end,
+		.p#{$i}.untenrechts:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.obenlinks:checked ~ .end,
+		.p#{$i}.untenrechts:checked ~ .p#{$i}.obenlinks:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		
+		.p#{$i}.untenlinks:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.obenrechts:checked ~ .end,
+		.p#{$i}.untenlinks:checked ~ .p#{$i}.obenrechts:checked ~ .p#{$i}.mittemitte:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.untenlinks:checked ~ .p#{$i}.obenrechts:checked ~ .end,
+		.p#{$i}.mittemitte:checked ~ .p#{$i}.obenrechts:checked ~ .p#{$i}.untenlinks:checked ~ .end,
+		.p#{$i}.obenrechts:checked ~ .p#{$i}.mittemitte:checked ~ .p#{$i}.untenlinks:checked ~ .end,
+		.p#{$i}.obenrechts:checked ~ .p#{$i}.untenlinks:checked ~ .p#{$i}.mittemitte:checked ~ .end	{
+			display: block;
+		
+			h3:before { content: "Player #{$i} wins!" !important; }
+		}
 	}
 	
 	.end {
@@ -201,4 +247,21 @@ body {
       }
     }
   }
+  
+	.caption {
+		padding-top: 10px;
+		padding-bottom: $label-size*3 + $table-margin;
+		margin-left: $table-margin - $table-margin/10*3;
+		margin-top: $table-margin/5;
+		font-family: "Helvetica";
+		font-size: 50px;
+		color: #fff;
+		text-align: center;
+		width: $label-size*3 + 60px;
+		background-color: grey;
+		
+		&:after{
+			content: $caption-X;
+		}
+	}
 }
