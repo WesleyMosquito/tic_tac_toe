@@ -7,205 +7,179 @@
 </head>
 <body>
   <div class="tic-tac-toe">
-  <!-- <div id="app"></div> -->
-  <!-- <script src="bundle.js" type="text/javascript"></script> -->
-  <table class="table">
-	<caption class="caption">Spieler X ist am Zug</caption>
-	<tr class="tr">
-		<td class="td">
-			<input class="obenlinks p1 t1" id="obenlinks p1 t1" type="radio">
-			<label for="obenlinks p1 t1" class="turn-1"></label>
-			<input class="obenlinks p2 t2" id="obenlinks p2 t2" type="radio">
-			<label for="obenlinks p2 t2" class="turn-2"></label>
-			<input class="obenlinks p1 t3" id="obenlinks p1 t3" type="radio">
-			<label for="obenlinks p1 t3" class="turn-3"></label>
-			<input class="obenlinks p2 t4" id="obenlinks p2 t4" type="radio">
-			<label for="obenlinks p2 t4" class="turn-4"></label>
-			<input class="obenlinks p1 t5" id="obenlinks p1 t5" type="radio">
-			<label for="obenlinks p1 t5" class="turn-5"></label>
-			<input class="obenlinks p2 t6" id="obenlinks p2 t6" type="radio">
-			<label for="obenlinks p2 t6" class="turn-6"></label>
-			<input class="obenlinks p1 t7" id="obenlinks p1 t7" type="radio">
-			<label for="obenlinks p1 t7" class="turn-7"></label>
-			<input class="obenlinks p2 t8" id="obenlinks p2 t8" type="radio">
-			<label for="obenlinks p2 t8" class="turn-8"></label>
-			<input class="obenlinks p1 t9" id="obenlinks p1 t9" type="radio">
-			<label for="obenlinks p1 t9" class="turn-9"></label>
-		</td>
-		
-		<td class="td">
-			<input class="obenmitte p1 t1" id="obenmitte p1 t1" type="radio">
-			<label for="obenmitte p1 t1" class="turn-1"></label>
-			<input class="obenmitte p2 t2" id="obenmitte p2 t2" type="radio">
-			<label for="obenmitte p2 t2" class="turn-2"></label>
-			<input class="obenmitte p1 t3" id="obenmitte p1 t3" type="radio">
-			<label for="obenmitte p1 t3" class="turn-3"></label>
-			<input class="obenmitte p2 t4" id="obenmitte p2 t4" type="radio">
-			<label for="obenmitte p2 t4" class="turn-4"></label>
-			<input class="obenmitte p1 t5" id="obenmitte p1 t5" type="radio">
-			<label for="obenmitte p1 t5" class="turn-5"></label>
-			<input class="obenmitte p2 t6" id="obenmitte p2 t6" type="radio">
-			<label for="obenmitte p2 t6" class="turn-6"></label>
-			<input class="obenmitte p1 t7" id="obenmitte p1 t7" type="radio">
-			<label for="obenmitte p1 t7" class="turn-7"></label>
-			<input class="obenmitte p2 t8" id="obenmitte p2 t8" type="radio">
-			<label for="obenmitte p2 t8" class="turn-8"></label>
-			<input class="obenmitte p1 t9" id="obenmitte p1 t9" type="radio">
-			<label for="obenmitte p1 t9" class="turn-9"></label>
-		</td>
-		
-		<td class="td">
-			<input class="obenrechts p1 t1" id="obenrechts p1 t1" type="radio">
-			<label for="obenrechts p1 t1" class="turn-1"></label>
-			<input class="obenrechts p2 t2" id="obenrechts p2 t2" type="radio">
-			<label for="obenrechts p2 t2" class="turn-2"></label>
-			<input class="obenrechts p1 t3" id="obenrechts p1 t3" type="radio">
-			<label for="obenrechts p1 t3" class="turn-3"></label>
-			<input class="obenrechts p2 t4" id="obenrechts p2 t4" type="radio">
-			<label for="obenrechts p2 t4" class="turn-4"></label>
-			<input class="obenrechts p1 t5" id="obenrechts p1 t5" type="radio">
-			<label for="obenrechts p1 t5" class="turn-5"></label>
-			<input class="obenrechts p2 t6" id="obenrechts p2 t6" type="radio">
-			<label for="obenrechts p2 t6" class="turn-6"></label>
-			<input class="obenrechts p1 t7" id="obenrechts p1 t7" type="radio">
-			<label for="obenrechts p1 t7" class="turn-7"></label>
-			<input class="obenrechts p2 t8" id="obenrechts p2 t8" type="radio">
-			<label for="obenrechts p2 t8" class="turn-8"></label>
-			<input class="obenrechts p1 t9" id="obenrechts p1 t9" type="radio">
-			<label for="obenrechts p1 t9" class="turn-9"></label>
-		</td>
-	</tr>
+  <div class="caption"><caption></caption></div>
 	
-	<tr class="tr">
-		<td class="td">
-			<input class="mittelinks p1 t1" id="mittelinks p1 t1" type="radio">
-			<label for="mittelinks p1 t1" class="turn-1"></label>
-			<input class="mittelinks p2 t2" id="mittelinks p2 t2" type="radio">
-			<label for="mittelinks p2 t2" class="turn-2"></label>
-			<input class="mittelinks p1 t3" id="mittelinks p1 t3" type="radio">
-			<label for="mittelinks p1 t3" class="turn-3"></label>
-			<input class="mittelinks p2 t4" id="mittelinks p2 t4" type="radio">
-			<label for="mittelinks p2 t4" class="turn-4"></label>
-			<input class="mittelinks p1 t5" id="mittelinks p1 t5" type="radio">
-			<label for="mittelinks p1 t5" class="turn-5"></label>
-			<input class="mittelinks p2 t6" id="mittelinks p2 t6" type="radio">
-			<label for="mittelinks p2 t6" class="turn-6"></label>
-			<input class="mittelinks p1 t7" id="mittelinks p1 t7" type="radio">
-			<label for="mittelinks p1 t7" class="turn-7"></label>
-			<input class="mittelinks p2 t8" id="mittelinks p2 t8" type="radio">
-			<label for="mittelinks p2 t8" class="turn-8"></label>
-			<input class="mittelinks p1 t9" id="mittelinks p1 t9" type="radio">
-			<label for="mittelinks p1 t9" class="turn-9"></label>
-		</td>
-		
-		<td class="td">
-			<input class="mittemitte p1 t1" id="mittemitte p1 t1" type="radio">
-			<label for="mittemitte p1 t1" class="turn-1"></label>
-			<input class="mittemitte p2 t2" id="mittemitte p2 t2" type="radio">
-			<label for="mittemitte p2 t2" class="turn-2"></label>
-			<input class="mittemitte p1 t3" id="mittemitte p1 t3" type="radio">
-			<label for="mittemitte p1 t3" class="turn-3"></label>
-			<input class="mittemitte p2 t4" id="mittemitte p2 t4" type="radio">
-			<label for="mittemitte p2 t4" class="turn-4"></label>
-			<input class="mittemitte p1 t5" id="mittemitte p1 t5" type="radio">
-			<label for="mittemitte p1 t5" class="turn-5"></label>
-			<input class="mittemitte p2 t6" id="mittemitte p2 t6" type="radio">
-			<label for="mittemitte p2 t6" class="turn-6"></label>
-			<input class="mittemitte p1 t7" id="mittemitte p1 t7" type="radio">
-			<label for="mittemitte p1 t7" class="turn-7"></label>
-			<input class="mittemitte p2 t8" id="mittemitte p2 t8" type="radio">
-			<label for="mittemitte p2 t8" class="turn-8"></label>
-			<input class="mittemitte p1 t9" id="mittemitte p1 t9" type="radio">
-			<label for="mittemitte p1 t9" class="turn-9"></label>
-		</td>
-		
-		<td class="td">
-			<input class="mitterechts p1 t1" id="mitterechts p1 t1" type="radio">
-			<label for="mitterechts p1 t1" class="turn-1"></label>
-			<input class="mitterechts p2 t2" id="mitterechts p2 t2" type="radio">
-			<label for="mitterechts p2 t2" class="turn-2"></label>
-			<input class="mitterechts p1 t3" id="mitterechts p1 t3" type="radio">
-			<label for="mitterechts p1 t3" class="turn-3"></label>
-			<input class="mitterechts p2 t4" id="mitterechts p2 t4" type="radio">
-			<label for="mitterechts p2 t4" class="turn-4"></label>
-			<input class="mitterechts p1 t5" id="mitterechts p1 t5" type="radio">
-			<label for="mitterechts p1 t5" class="turn-5"></label>
-			<input class="mitterechts p2 t6" id="mitterechts p2 t6" type="radio">
-			<label for="mitterechts p2 t6" class="turn-6"></label>
-			<input class="mitterechts p1 t7" id="mitterechts p1 t7" type="radio">
-			<label for="mitterechts p1 t7" class="turn-7"></label>
-			<input class="mitterechts p2 t8" id="mitterechts p2 t8" type="radio">
-			<label for="mitterechts p2 t8" class="turn-8"></label>
-			<input class="mitterechts p1 t9" id="mitterechts p1 t9" type="radio">
-			<label for="mitterechts p1 t9" class="turn-9"></label>
-		</td>
-	</tr>
-	
-	<tr class="tr">
-		<td class="td">
-			<input class="untenlinks p1 t1" id="untenlinks p1 t1" type="radio">
-			<label for="untenlinks p1 t1" class="turn-1"></label>
-			<input class="untenlinks p2 t2" id="untenlinks p2 t2" type="radio">
-			<label for="untenlinks p2 t2" class="turn-2"></label>
-			<input class="untenlinks p1 t3" id="untenlinks p1 t3" type="radio">
-			<label for="untenlinks p1 t3" class="turn-3"></label>
-			<input class="untenlinks p2 t4" id="untenlinks p2 t4" type="radio">
-			<label for="untenlinks p2 t4" class="turn-4"></label>
-			<input class="untenlinks p1 t5" id="untenlinks p1 t5" type="radio">
-			<label for="untenlinks p1 t5" class="turn-5"></label>
-			<input class="untenlinks p2 t6" id="untenlinks p2 t6" type="radio">
-			<label for="untenlinks p2 t6" class="turn-6"></label>
-			<input class="untenlinks p1 t7" id="untenlinks p1 t7" type="radio">
-			<label for="untenlinks p1 t7" class="turn-7"></label>
-			<input class="untenlinks p2 t8" id="untenlinks p2 t8" type="radio">
-			<label for="untenlinks p2 t8" class="turn-8"></label>
-			<input class="untenlinks p1 t9" id="untenlinks p1 t9" type="radio">
-			<label for="untenlinks p1 t9" class="turn-9"></label>
-		</td>
-	
-		<td class="td">
-			<input class="untenmitte p1 t1" id="untenmitte p1 t1" type="radio">
-			<label for="untenmitte p1 t1" class="turn-1"></label>
-			<input class="untenmitte p2 t2" id="untenmitte p2 t2" type="radio">
-			<label for="untenmitte p2 t2" class="turn-2"></label>
-			<input class="untenmitte p1 t3" id="untenmitte p1 t3" type="radio">
-			<label for="untenmitte p1 t3" class="turn-3"></label>
-			<input class="untenmitte p2 t4" id="untenmitte p2 t4" type="radio">
-			<label for="untenmitte p2 t4" class="turn-4"></label>
-			<input class="untenmitte p1 t5" id="untenmitte p1 t5" type="radio">
-			<label for="untenmitte p1 t5" class="turn-5"></label>
-			<input class="untenmitte p2 t6" id="untenmitte p2 t6" type="radio">
-			<label for="untenmitte p2 t6" class="turn-6"></label>
-			<input class="untenmitte p1 t7" id="untenmitte p1 t7" type="radio">
-			<label for="untenmitte p1 t7" class="turn-7"></label>
-			<input class="untenmitte p2 t8" id="untenmitte p2 t8" type="radio">
-			<label for="untenmitte p2 t8" class="turn-8"></label>
-			<input class="untenmitte p1 t9" id="untenmitte p1 t9" type="radio">
-			<label for="untenmitte p1 t9" class="turn-9"></label>
-		</td>
-		
-		<td class="td">
-			<input class="untenrechts p1 t1" id="untenrechts p1 t1" type="radio">
-			<label for="untenrechts p1 t1" class="turn-1"></label>
-			<input class="untenrechts p2 t2" id="untenrechts p2 t2" type="radio">
-			<label for="untenrechts p2 t2" class="turn-2"></label>
-			<input class="untenrechts p1 t3" id="untenrechts p1 t3" type="radio">
-			<label for="untenrechts p1 t3" class="turn-3"></label>
-			<input class="untenrechts p2 t4" id="untenrechts p2 t4" type="radio">
-			<label for="untenrechts p2 t4" class="turn-4"></label>
-			<input class="untenrechts p1 t5" id="untenrechts p1 t5" type="radio">
-			<label for="untenrechts p1 t5" class="turn-5"></label>
-			<input class="untenrechts p2 t6" id="untenrechts p2 t6" type="radio">
-			<label for="untenrechts p2 t6" class="turn-6"></label>
-			<input class="untenrechts p1 t7" id="untenrechts p1 t7" type="radio">
-			<label for="untenrechts p1 t7" class="turn-7"></label>
-			<input class="untenrechts p2 t8" id="untenrechts p2 t8" type="radio">
-			<label for="untenrechts p2 t8" class="turn-8"></label>
-			<input class="untenrechts p1 t9" id="untenrechts p1 t9" type="radio">
-			<label for="untenrechts p1 t9" class="turn-9"></label>
-		</td>
-	</tr>
-  </table>
+			<input class="p1 obenlinks turn-1" id="p1 obenlinks turn-1" type="radio">
+			<label for="p1 obenlinks turn-1" class="turn-1"></label>
+			<input class="p1 obenmitte turn-1" id="p1 obenmitte turn-1" type="radio">
+			<label for="p1 obenmitte turn-1" class="turn-1"></label>
+			<input class="p1 obenrechts turn-1" id="p1 obenrechts turn-1" type="radio">
+			<label for="p1 obenrechts turn-1" class="turn-1"></label>
+			<input class="p1 mittelinks turn-1" id="p1 mittelinks turn-1" type="radio">
+			<label for="p1 mittelinks turn-1" class="turn-1"></label>
+			<input class="p1 mittemitte turn-1" id="p1 mittemitte turn-1" type="radio">
+			<label for="p1 mittemitte turn-1" class="turn-1"></label>
+			<input class="p1 mitterechts turn-1" id="p1 mitterechts turn-1" type="radio">
+			<label for="p1 mitterechts turn-1" class="turn-1"></label>
+			<input class="p1 untenlinks turn-1" id="p1 untenlinks turn-1" type="radio">
+			<label for="p1 untenlinks turn-1" class="turn-1"></label>
+			<input class="p1 untenmitte turn-1" id="p1 untenmitte turn-1" type="radio">
+			<label for="p1 untenmitte turn-1" class="turn-1"></label>
+			<input class="p1 untenrechts turn-1" id="p1 untenrechts turn-1" type="radio">
+			<label for="p1 untenrechts turn-1" class="turn-1"></label>
+			
+			<input class="p2 obenlinks turn-2" id="p2 obenlinks turn-2" type="radio">
+			<label for="p2 obenlinks turn-2" class="turn-2"></label>
+			<input class="p2 obenmitte turn-2" id="p2 obenmitte turn-2" type="radio">
+			<label for="p2 obenmitte turn-2" class="turn-2"></label>
+			<input class="p2 obenrechts turn-2" id="p2 obenrechts turn-2" type="radio">
+			<label for="p2 obenrechts turn-2" class="turn-2"></label>
+			<input class="p2 mittelinks turn-2" id="p2 mittelinks turn-2" type="radio">
+			<label for="p2 mittelinks turn-2" class="turn-2"></label>
+			<input class="p2 mittemitte turn-2" id="p2 mittemitte turn-2" type="radio">
+			<label for="p2 mittemitte turn-2" class="turn-2"></label>
+			<input class="p2 mitterechts turn-2" id="p2 mitterechts turn-2" type="radio">
+			<label for="p2 mitterechts turn-2" class="turn-2"></label>
+			<input class="p2 untenlinks turn-2" id="p2 untenlinks turn-2" type="radio">
+			<label for="p2 untenlinks turn-2" class="turn-2"></label>
+			<input class="p2 untenmitte turn-2" id="p2 untenmitte turn-2" type="radio">
+			<label for="p2 untenmitte turn-2" class="turn-2"></label>
+			<input class="p2 untenrechts turn-2" id="p2 untenrechts turn-2" type="radio">
+			<label for="p2 untenrechts turn-2" class="turn-2"></label>
+			
+			<input class="p1 obenlinks turn-3" id="p1 obenlinks turn-3" type="radio">
+			<label for="p1 obenlinks turn-3" class="turn-3"></label>
+			<input class="p1 obenmitte turn-3" id="p1 obenmitte turn-3" type="radio">
+			<label for="p1 obenmitte turn-3" class="turn-3"></label>
+			<input class="p1 obenrechts turn-3" id="p1 obenrechts turn-3" type="radio">
+			<label for="p1 obenrechts turn-3" class="turn-3"></label>
+			<input class="p1 mittelinks turn-3" id="p1 mittelinks turn-3" type="radio">
+			<label for="p1 mittelinks turn-3" class="turn-3"></label>
+			<input class="p1 mittemitte turn-3" id="p1 mittemitte turn-3" type="radio">
+			<label for="p1 mittemitte turn-3" class="turn-3"></label>
+			<input class="p1 mitterechts turn-3" id="p1 mitterechts turn-3" type="radio">
+			<label for="p1 mitterechts turn-3" class="turn-3"></label>
+			<input class="p1 untenlinks turn-3" id="p1 untenlinks turn-3" type="radio">
+			<label for="p1 untenlinks turn-3" class="turn-3"></label>
+			<input class="p1 untenmitte turn-3" id="p1 untenmitte turn-3" type="radio">
+			<label for="p1 untenmitte turn-3" class="turn-3"></label>
+			<input class="p1 untenrechts turn-3" id="p1 untenrechts turn-3" type="radio">
+			<label for="p1 untenrechts turn-3" class="turn-3"></label>
+			
+			<input class="p2 obenlinks turn-4" id="p2 obenlinks turn-4" type="radio">
+			<label for="p2 obenlinks turn-4" class="turn-4"></label>
+			<input class="p2 obenmitte turn-4" id="p2 obenmitte turn-4" type="radio">
+			<label for="p2 obenmitte turn-4" class="turn-4"></label>
+			<input class="p2 obenrechts turn-4" id="p2 obenrechts turn-4" type="radio">
+			<label for="p2 obenrechts turn-4" class="turn-4"></label>
+			<input class="p2 mittelinks turn-4" id="p2 mittelinks turn-4" type="radio">
+			<label for="p2 mittelinks turn-4" class="turn-4"></label>
+			<input class="p2 mittemitte turn-4" id="p2 mittemitte turn-4" type="radio">
+			<label for="p2 mittemitte turn-4" class="turn-4"></label>
+			<input class="p2 mitterechts turn-4" id="p2 mitterechts turn-4" type="radio">
+			<label for="p2 mitterechts turn-4" class="turn-4"></label>
+			<input class="p2 untenlinks turn-4" id="p2 untenlinks turn-4" type="radio">
+			<label for="p2 untenlinks turn-4" class="turn-4"></label>
+			<input class="p2 untenmitte turn-4" id="p2 untenmitte turn-4" type="radio">
+			<label for="p2 untenmitte turn-4" class="turn-4"></label>
+			<input class="p2 untenrechts turn-4" id="p2 untenrechts turn-4" type="radio">
+			<label for="p2 untenrechts turn-4" class="turn-4"></label>
+			
+			<input class="p1 obenlinks turn-5" id="p1 obenlinks turn-5" type="radio">
+			<label for="p1 obenlinks turn-5" class="turn-5"></label>
+			<input class="p1 obenmitte turn-5" id="p1 obenmitte turn-5" type="radio">
+			<label for="p1 obenmitte turn-5" class="turn-5"></label>
+			<input class="p1 obenrechts turn-5" id="p1 obenrechts turn-5" type="radio">
+			<label for="p1 obenrechts turn-5" class="turn-5"></label>
+			<input class="p1 mittelinks turn-5" id="p1 mittelinks turn-5" type="radio">
+			<label for="p1 mittelinks turn-5" class="turn-5"></label>
+			<input class="p1 mittemitte turn-5" id="p1 mittemitte turn-5" type="radio">
+			<label for="p1 mittemitte turn-5" class="turn-5"></label>
+			<input class="p1 mitterechts turn-5" id="p1 mitterechts turn-5" type="radio">
+			<label for="p1 mitterechts turn-5" class="turn-5"></label>
+			<input class="p1 untenlinks turn-5" id="p1 untenlinks turn-5" type="radio">
+			<label for="p1 untenlinks turn-5" class="turn-5"></label>
+			<input class="p1 untenmitte turn-5" id="p1 untenmitte turn-5" type="radio">
+			<label for="p1 untenmitte turn-5" class="turn-5"></label>
+			<input class="p1 untenrechts turn-5" id="p1 untenrechts turn-5" type="radio">
+			<label for="p1 untenrechts turn-5" class="turn-5"></label>
+			
+			<input class="p2 obenlinks turn-6" id="p2 obenlinks turn-6" type="radio">
+			<label for="p2 obenlinks turn-6" class="turn-6"></label>
+			<input class="p2 obenmitte turn-6" id="p2 obenmitte turn-6" type="radio">
+			<label for="p2 obenmitte turn-6" class="turn-6"></label>
+			<input class="p2 obenrechts turn-6" id="p2 obenrechts turn-6" type="radio">
+			<label for="p2 obenrechts turn-6" class="turn-6"></label>
+			<input class="p2 mittelinks turn-6" id="p2 mittelinks turn-6" type="radio">
+			<label for="p2 mittelinks turn-6" class="turn-6"></label>
+			<input class="p2 mittemitte turn-6" id="p2 mittemitte turn-6" type="radio">
+			<label for="p2 mittemitte turn-6" class="turn-6"></label>
+			<input class="p2 mitterechts turn-6" id="p2 mitterechts turn-6" type="radio">
+			<label for="p2 mitterechts turn-6" class="turn-6"></label>
+			<input class="p2 untenlinks turn-6" id="p2 untenlinks turn-6" type="radio">
+			<label for="p2 untenlinks turn-6" class="turn-6"></label>
+			<input class="p2 untenmitte turn-6" id="p2 untenmitte turn-6" type="radio">
+			<label for="p2 untenmitte turn-6" class="turn-6"></label>
+			<input class="p2 untenrechts turn-6" id="p2 untenrechts turn-6" type="radio">
+			<label for="p2 untenrechts turn-6" class="turn-6"></label>
+			
+			<input class="p1 obenlinks turn-7" id="p1 obenlinks turn-7" type="radio">
+			<label for="p1 obenlinks turn-7" class="turn-7"></label>
+			<input class="p1 obenmitte turn-7" id="p1 obenmitte turn-7" type="radio">
+			<label for="p1 obenmitte turn-7" class="turn-7"></label>
+			<input class="p1 obenrechts turn-7" id="p1 obenrechts turn-7" type="radio">
+			<label for="p1 obenrechts turn-7" class="turn-7"></label>
+			<input class="p1 mittelinks turn-7" id="p1 mittelinks turn-7" type="radio">
+			<label for="p1 mittelinks turn-7" class="turn-7"></label>
+			<input class="p1 mittemitte turn-7" id="p1 mittemitte turn-7" type="radio">
+			<label for="p1 mittemitte turn-7" class="turn-7"></label>
+			<input class="p1 mitterechts turn-7" id="p1 mitterechts turn-7" type="radio">
+			<label for="p1 mitterechts turn-7" class="turn-7"></label>
+			<input class="p1 untenlinks turn-7" id="p1 untenlinks turn-7" type="radio">
+			<label for="p1 untenlinks turn-7" class="turn-7"></label>
+			<input class="p1 untenmitte turn-7" id="p1 untenmitte turn-7" type="radio">
+			<label for="p1 untenmitte turn-7" class="turn-7"></label>
+			<input class="p1 untenrechts turn-7" id="p1 untenrechts turn-7" type="radio">
+			<label for="p1 untenrechts turn-7" class="turn-7"></label>
+			
+			<input class="p2 obenlinks turn-8" id="p2 obenlinks turn-8" type="radio">
+			<label for="p2 obenlinks turn-8" class="turn-8"></label>
+			<input class="p2 obenmitte turn-8" id="p2 obenmitte turn-8" type="radio">
+			<label for="p2 obenmitte turn-8" class="turn-8"></label>
+			<input class="p2 obenrechts turn-8" id="p2 obenrechts turn-8" type="radio">
+			<label for="p2 obenrechts turn-8" class="turn-8"></label>
+			<input class="p2 mittelinks turn-8" id="p2 mittelinks turn-8" type="radio">
+			<label for="p2 mittelinks turn-8" class="turn-8"></label>
+			<input class="p2 mittemitte turn-8" id="p2 mittemitte turn-8" type="radio">
+			<label for="p2 mittemitte turn-8" class="turn-8"></label>
+			<input class="p2 mitterechts turn-8" id="p2 mitterechts turn-8" type="radio">
+			<label for="p2 mitterechts turn-8" class="turn-8"></label>
+			<input class="p2 untenlinks turn-8" id="p2 untenlinks turn-8" type="radio">
+			<label for="p2 untenlinks turn-8" class="turn-8"></label>
+			<input class="p2 untenmitte turn-8" id="p2 untenmitte turn-8" type="radio">
+			<label for="p2 untenmitte turn-8" class="turn-8"></label>
+			<input class="p2 untenrechts turn-8" id="p2 untenrechts turn-8" type="radio">
+			<label for="p2 untenrechts turn-8" class="turn-8"></label>
+			
+			<input class="p1 obenlinks turn-9" id="p1 obenlinks turn-9" type="radio">
+			<label for="p1 obenlinks turn-9" class="turn-9"></label>
+			<input class="p1 obenmitte turn-9" id="p1 obenmitte turn-9" type="radio">
+			<label for="p1 obenmitte turn-9" class="turn-9"></label>
+			<input class="p1 obenrechts turn-9" id="p1 obenrechts turn-9" type="radio">
+			<label for="p1 obenrechts turn-9" class="turn-9"></label>
+			<input class="p1 mittelinks turn-9" id="p1 mittelinks turn-9" type="radio">
+			<label for="p1 mittelinks turn-9" class="turn-9"></label>
+			<input class="p1 mittemitte turn-9" id="p1 mittemitte turn-9" type="radio">
+			<label for="p1 mittemitte turn-9" class="turn-9"></label>
+			<input class="p1 mitterechts turn-9" id="p1 mitterechts turn-9" type="radio">
+			<label for="p1 mitterechts turn-9" class="turn-9"></label>
+			<input class="p1 untenlinks turn-9" id="p1 untenlinks turn-9" type="radio">
+			<label for="p1 untenlinks turn-9" class="turn-9"></label>
+			<input class="p1 untenmitte turn-9" id="p1 untenmitte turn-9" type="radio">
+			<label for="p1 untenmitte turn-9" class="turn-9"></label>
+			<input class="p1 untenrechts turn-9" id="p1 untenrechts turn-9" type="radio">
+			<label for="p1 untenrechts turn-9" class="turn-9"></label>
+
   <div class="end">
     <h3></h3><a href="">Restart</a>
   </div>
