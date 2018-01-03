@@ -1,12 +1,13 @@
 $table-width: 500px;
 $table-height: 500px;
 
+$table-margin: 50px;
+
 $caption-X: "Spieler X ist am Zug";
 $caption-O: "Spieler O ist am Zug";
 
 body {
-    margin: 50px;
-	width: 200px;
+    margin: $table-margin;
 	padding: 10px;
 	text-align: center;
 }
@@ -16,16 +17,19 @@ body {
 		border-collapse: collapse;
 		border-style: hidden;
 		font-size: 30px;
-		width: $table-width;
-		height: $table-height;
+		//width: $table-width;
+		//height: $table-height;
 	}
 
-	.td{
+	.tr {
+		width: $table-width/3;
+	}
+	
+	.td {
 		border: 10px solid rgba(51,51,255,0.5);
-		background-color: rgba(102,102,255,0.8);
-		width: $table-width/9;
-		height: $table-height/9;
-		text-align: center;
+		//background-color: rgba(102,102,255,0.8);
+		width: ($table-width/3);
+		height: ($table-height/3);
 	}
 	
 	input[type="radio"] {
@@ -37,7 +41,7 @@ body {
 		
 		&:checked + label {
 			cursor: default;
-			//z-index: 10 !important;
+			z-index: 10 !important;
 		}
 		
 		&.p1 + label:after {
@@ -53,39 +57,108 @@ body {
 		&.p1:checked + label:after,
 		&.p2:checked + label:after { opacity: 1; }
 		
-		@for $i from 1 through 2 {
+		&.p1:checked + label:after { 
+			background-color: rgba(255,0,0,0.7);
+			border-radius: 14px;
+		}
+		&.p2:checked + label:after { 
+			background-color: rgba(0,255,0,0.7);
+			border-radius: 14px;
+		}
+		
+		@for $i from 1 through 9 {
 			&.turn-#{$i} + label {
 				z-index: $i;
 			}
 		}
 		
-		&.turn-1 + { display: block; }
+		&.turn-1 + label { display: block; }
 		
-		@for $i from 1 through 1 {
+		@for $i from 1 through 8 {
 			&.turn-#{$i}:checked ~ .turn-#{$i+1} + label { display: block; }
+		}
+		
+		//Positioning the labels
+		&.obenlinks + label {
+			left: $table-margin+10px;
+			top: $table-margin+46px;
+		}
+		
+		&.mittelinks + label {
+			left: $table-margin+10px;
+			top: $table-margin+226px;
+		}
+		
+		&.untenlinks + label {
+			left: $table-margin+10px;
+			top: $table-margin+405px;
+		}
+		
+		&.obenmitte + label {
+			left: $table-margin+190px;
+			top: $table-margin+46px;
+		}
+		
+		&.mittemitte + label {
+			left: $table-margin+190px;
+			top: $table-margin+226px;
+		}
+		
+		&.untenmitte + label {
+			left: $table-margin+190px;
+			top: $table-margin+405px;
+		}
+		
+		&.obenrechts + label {
+			left: $table-margin+370px;
+			top: $table-margin+46px;
+		}
+		
+		&.mitterechts + label {
+			left: $table-margin+370px;
+			top: $table-margin+226px;
+		}
+		
+		&.untenrechts + label {
+			left: $table-margin+370px;
+			top: $table-margin+405px;
 		}
 	}
 	
 	label {
+		background-color: rgba(102,102,255,0.8);
 		position: absolute;
 		border-radius: 14px;
 		cursor: pointer;
 		color: #fff;
-		height: $table-height/9;
-		width: $table-width/9;
-		
+		height: 165px;
+		width: 165px;
 		&:hover {
 			background-color: #3d4250;
 			&:after { opacity: .4; }
+		}
+		
+		&:after {
+			left: 0%;
+			height: 125px;
+			width: 100%;
+			font-family: "Arial";
+			font-size: 70px;
+			padding-top: 40px;
+			text-align: center;
+			vertical-align: middle;
+			position: absolute;
+			opacity: 0;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
 		}
 		
 		
 	}
 	
 	//Checking for a tie:
-	input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~
-	input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~
-	input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ input[type="checkbox"]:checked ~ .end{
+	input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~
+	input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~
+	input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ .end{
 	display: block;
 	
 		> h3:before {content:"It is a tie!";}
@@ -128,23 +201,4 @@ body {
       }
     }
   }
-}
-
-.ol, .om, .or,
-.ml, .mm, .mr,
-.ul, .um, .ur {
-	position: relative;
-}
-
-.obenlinks:checked + .ol:after, .obenmitte:checked + .om:after, .obenrechts:checked + .or:after,
-.mittelinks:checked + .ml:after, .mittemitte:checked + .mm:after, .mitterechts:checked + .mr:after,
-.untenlinks:checked + .ul:after, .untenmitte:checked + .um:after, .untenrechts:checked + .ur:after
-{
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color:white;
 }
